@@ -1,0 +1,217 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #33373d;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.container {
+  border: 5px solid red;
+  margin: 5px;
+  padding: 5px;
+}
+
+
+.div {
+  box-sizing: border-box;
+}
+
+.list {
+  padding-left: 20px;
+  text-align: left;
+  border-bottom:1px solid grep;
+}
+
+.list h4 {
+  font-size: 20px;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: #f3fd97;
+  display: inline-block;
+}
+
+.list p {
+  font-size: 15px; /* 작게 하고 싶은 폰트 크기로 변경 */
+}
+
+
+
+
+.black-nav {
+  display: flex;
+  background: rgb(185, 252, 131);
+  width: 100%;
+  color: white;
+  justify-content: center;
+  padding-left: 20px;
+  height: 60px;
+}
+
+.black-nav h4 {
+  font-family: 'Arial', sans-serif; /* 바꾸고 싶은 글꼴로 변경 */
+  color: #ffffff; /* 바꾸고 싶은 색상으로 변경 */
+  font-size: 22px; /* 바꾸고 싶은 크기로 변경 */
+}
+
+.black-nav > * {
+  margin: auto;
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #f9f9f9;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  max-width: 80%;
+  width: 90%; /* 가로폭을 조정하여 화면을 가득 채우도록 함 */
+  max-height: 90%; /* 최대 높이를 조정하여 화면을 가득 채우도록 함 */
+  overflow-y: auto; /* 내용이 모달 창을 넘어갈 경우 스크롤 바 표시 */
+}
+
+
+.modal h4 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #000000;
+}
+
+.modal p {
+  margin-bottom: 15px;
+  color: #000000;
+}
+
+.modal button {
+  padding: 12px 24px;
+  background-color: #ecf75a;
+  color: rgb(0, 0, 0);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.modal button:hover {
+  background-color: #eb8fba;
+}
+
+.modal .close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  color: #020101;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.modal .close-btn:hover {
+  color: #000000;
+}
+
+body {
+  background-color: #f5ffcf;
+}
+
+h1 {
+  color: black;
+}
+
+.modal .date {
+  color: rgb(0, 0, 0);
+  font-size: 17px;
+  font-family: Arial, sans-serif;
+  background-color: pink; /* 초록색 배경 */
+  border: none; /* 테두리 없음 */
+  color: white; /* 흰색 텍스트 */
+  padding: 10px 15px; /* 버튼 내부 여백 */
+  text-align: center; /* 텍스트 가운데 정렬 */
+  text-decoration: none; /* 텍스트에 밑줄 없음 */
+  display: inline-block; /* 인라인 블록 요소로 표시 */
+  font-size: 10px; /* 텍스트 크기 */
+  margin: 4px 2px; /* 마진 설정 */
+  cursor: pointer; /* 포인터 커서 */
+  border-radius: 8px; /* 버튼 모서리 둥글게 */
+}
+
+.list div strong {
+  font-weight: bold;
+}
+
+.list div p {
+  font-size: 15px;
+  font-weight: normal;
+}
+
+.list div {
+  padding-left: 20px;
+  text-align: left;
+}
+
+.list div ul {
+  list-style-type: none;
+  padding-left: 20px;
+}
+
+.list div ul li {
+  margin-bottom: 5px;
+}
+.intro {
+  font-size: 21px; /* 크기 조정 */
+  font-weight: bold; /* 글자 진하게 설정 */
+}
+
+.travel-spots {
+  font-size: 21px; /* 크기 조정 */
+  font-weight: bold; /* 글자 진하게 설정 */
+}
+
+.date {
+  background-color: pink; /* 초록색 배경 */
+  border: none; /* 테두리 없음 */
+  color: white; /* 흰색 텍스트 */
+  padding: 10px 15px; /* 버튼 내부 여백 */
+  text-align: center; /* 텍스트 가운데 정렬 */
+  text-decoration: none; /* 텍스트에 밑줄 없음 */
+  display: inline-block; /* 인라인 블록 요소로 표시 */
+  font-size: 10px; /* 텍스트 크기 */
+  margin: 4px 2px; /* 마진 설정 */
+  cursor: pointer; /* 포인터 커서 */
+  border-radius: 8px; /* 버튼 모서리 둥글게 */
+}
