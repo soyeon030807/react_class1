@@ -1,3 +1,10 @@
+/* Font */
+.hi-melody-regular {
+    font-family: "Hi Melody", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
 /* Default */
 :root {
     --color-dark: #161616;
@@ -5,6 +12,7 @@
 }
 
 *, html {
+    font-family: "Hi Melody", sans-serif;
     box-sizing: border-box;
 }
 
