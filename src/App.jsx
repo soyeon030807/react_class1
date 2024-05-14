@@ -1,9 +1,8 @@
-import logo from './logo.svg';
 import './App.css';
 import { useState } from 'react';
 
 function App() {
-  const [글제목] = useState([
+  const [postName, setPostName] = useState([
     '🦖제주도🤿 : 푸른 바다와 신비로운 자연의 섬, 한국의 휴양 천국', 
     '🛬일본🗻 : 현대와 전통이 공존하는 동양의 보석 상자', 
     '🏝️필리핀🏄‍♀️ : 비경의 아름다움이 넘치는 푸른 대양의 보석', 
@@ -151,10 +150,10 @@ function App() {
       <div className="black-nav">
         <h4> 💜소연이의 블로그💜 </h4>
       </div>
-      {글제목.map((a, i) => (
+      {postName.map((a, i) => (
         <div className="list" key={i}>
           <h4 onClick={() => toggleModal(i)}>
-            {글제목[i]}
+            {postName[i]}
             <span onClick={(e) => {e.stopPropagation(); let new하트 = [...하트]; new하트[i]++; 하트변경(new하트);}}> 🤍 {하트[i]} </span>
           </h4>
           <p className="date">{날짜[i]}</p>
@@ -168,7 +167,7 @@ function App() {
         입력값변경(e.target.value);
         console.log(입력값);
       }} />
-      {modal && title !== null ? <Modal title={title} 글제목={글제목} 날짜={날짜} 상세내용={상세내용} color={'#f3fd97'} onClose={closeModal} /> : null}
+      {modal && title !== null ? <Modal title={title} postName={postName} 날짜={날짜} 상세내용={상세내용} color={'#f3fd97'} onClose={closeModal} /> : null}
 
       <img src="/blogb/public/일출.png" alt="일출 이미지" />
     </div>
@@ -184,7 +183,7 @@ function Modal(props) {
   return (
     <div className="modal" style={{ background: props.color }}>
       <button className="close-btn" onClick={closeModal}>x</button>
-      <h4> {props.글제목[props.title]} </h4>
+      <h4> {props.postName[props.title]} </h4>
       <p className="date"> {props.날짜[props.title]} </p>
       {props.상세내용[props.title] && (
         <div>

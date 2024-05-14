@@ -3,11 +3,24 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import About from "./components/page/About";
+import Posts from "./components/page/Posts";
+import PostDetail from "./components/page/PostDetail";
+import {RouterProvider} from "react-router-dom";
+
+const router = {
+    path: '/', element: <App/>,
+    children: [
+        {path: '/about', element: <About/>},
+        {path: '/posts', element: <Posts/>},
+        {path: '/posts/:id', element: <PostDetail/>},
+    ]
+}
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router={router}/>
   </React.StrictMode>
 );
 
