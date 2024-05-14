@@ -1,28 +1,26 @@
 import {useState} from 'react';
 
 // Components
-import BlogTitle from "../BlogTitle";
+import Header from "../Header";
 import PostList from "../PostList";
 import Modal from "../Modal";
+import ContentTitle from "../ContentTitle";
+import LikeButton from "../LikeButton";
 
-function Home() {
-    const [postName, setPostName] = useState([
+export default function Home() {
+    const [postTitle, setPostTitle] = useState([
         '🦖제주도🤿 : 푸른 바다와 신비로운 자연의 섬, 한국의 휴양 천국',
         '🛬일본🗻 : 현대와 전통이 공존하는 동양의 보석 상자',
         '🏝️필리핀🏄‍♀️ : 비경의 아름다움이 넘치는 푸른 대양의 보석',
         '🍝이탈리아🎨 : 로맨틱한 분위기 속에 펼쳐지는 예술과 역사의 나라, 이탈리아'
     ]);
-    const [like, setLike] = useState([0, 0, 0, 0]);
+    const [like, setLike] = useState(new Array(postTitle.length).fill(false));
 
     const [date] = useState(['2023년 04월 13일', '2023년 04월 23일', '2023년 04월 22일', '2021년 01월 02일']);
-    const [상세내용] = useState([
+    const [details] = useState([
         {
-            내용: (
-                <h1 style={{fontWeight: 'bold', fontSize: '25px'}}>
-                    🌴 제주도 여행 블로그 - 푸른 바다와 신비로운 자연의 섬
-                </h1>
-            ),
-            추가설명: (
+            content: <ContentTitle title="🌴 제주도 여행 블로그 - 푸른 바다와 신비로운 자연의 섬"/>,
+            furtherClarification: (
                 <div>
                     <strong className="intro">🌺소개🌺</strong><br/>
                     제주도는 한국의 남쪽에 위치한 아름다운 섬으로, 푸른 바다와 우리나라의 다채로운 자연 경관을 갖추고 있습니다. 이곳은 다양한 관광 명소와 맛있는 음식, 그리고 특별한 문화를 경험할
@@ -49,12 +47,8 @@ function Home() {
             )
         },
         {
-            내용: (
-                <h1 style={{fontWeight: 'bold', fontSize: '25px'}}>
-                    🛫 일본 여행 블로그 🎌
-                </h1>
-            ),
-            추가설명: (
+            content: <ContentTitle title="🛫 일본 여행 블로그 🎌"/>,
+            furtherClarification: (
                 <div>
                     안녕하세요! 오늘은 일본 여행에 관한 소식을 전해드릴게요. <br/>
                     <strong className="intro">🗻 일본의 아름다운 자연 경관 🗻</strong><br/>
@@ -81,12 +75,8 @@ function Home() {
             )
         },
         {
-            내용: (
-                <h1 style={{fontWeight: 'bold', fontSize: '25px'}}>
-                    🏝️ 필리핀 여행 블로그 🏄‍♀️
-                </h1>
-            ),
-            추가설명: (
+            content: <ContentTitle title="🏝️ 필리핀 여행 블로그 🏄‍♀️"/>,
+            furtherClarification: (
                 <div>
                     안녕하세요! 오늘은 필리핀 여행에 관한 이야기를 나누어 보려고 합니다. <br/>
                     <strong className="intro">🌴 필리핀의 멋진 자연 풍경 🌴</strong><br/>
@@ -113,12 +103,8 @@ function Home() {
             )
         },
         {
-            내용: (
-                <h1 style={{fontWeight: 'bold', fontSize: '25px'}}>
-                    🇮🇹 이탈리아 여행 블로그 🍕
-                </h1>
-            ),
-            추가설명: (
+            content: <ContentTitle title="🇮🇹 이탈리아 여행 블로그 🍕♀️"/>,
+            furtherClarification: (
                 <div>
                     안녕하세요! 오늘은 이탈리아의 아름다움과 매력에 관해 이야기해보려고 합니다. <br/>
                     <strong className="intro">🏰 역사적인 도시와 건축물 🏰 </strong><br/>
@@ -169,22 +155,29 @@ function Home() {
     };
 
     return (
-        <div className="App">
-            <BlogTitle title="💜소연이의 블로그💜"/>
-            <PostList postName={postName} like={like} setLike={setLike} date={date} toggleModal={toggleModal}/>
-            <input type="text"/>
-            <input type="date"/>
-            <input type="number"/>
-            <input type="checkbox"/>
-            <input onChange={(e) => {
-                setText(e.target.value);
-                console.log(text);
-            }}/>
-            {modal && title !== null ? <Modal title={title} postName={postName} date={date} 상세내용={상세내용} color={'#f3fd97'} onClose={closeModal}/> : null}
-            <img src="/blogb/public/일출.png" alt="일출 이미지"/>
+        <div className="container">
+            <Header title="💜소연이의 블로그💜"/>
+            <main className="contents">
+                <PostList
+                    postTitle={postTitle}
+                    like={like}
+                    setLike={setLike}
+                    date={date}
+                    toggleModal={toggleModal}
+                />
+                {
+                    modal && title !== null
+                        ? <Modal
+                            title={title}
+                            postTitle={postTitle}
+                            date={date}
+                            details={details}
+                            color={'#f3fd97'}
+                            onClose={closeModal}
+                        />
+                        : null
+                }
+            </main>
         </div>
     );
 }
-
-
-export default Home;

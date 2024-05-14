@@ -1,9 +1,9 @@
 import React from 'react';
 
-export default function Posts() {
+export default function Navigation() {
     return (
         <div>
-            Posts
+            
         </div>
     );
 }

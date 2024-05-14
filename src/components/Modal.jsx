@@ -1,23 +1,24 @@
 import React from 'react';
 
-export default function Modal(props) {
-    const closeModal = () => {
-        props.onClose();
-    };
+export default function Modal({...rest}) {
+    // 프롭스 받아오기
+    const {title, details, postTitle, date, color, onClose} = rest;
+
+    // Modal Close
+    const closeModal = () => onClose();
 
     return (
-        <div className="modal" style={{background: props.color}}>
+        <div className="modal" style={{background: color}}>
             <button className="close-btn" onClick={closeModal}>x</button>
-            <h4> {props.postName[props.title]} </h4>
-            <p className="date"> {props.date[props.title]} </p>
-            {props.상세내용[props.title] && (
+            <h4>{postTitle[title]} </h4>
+            <p className="date">{date[title]}</p>
+            {details[title] && (
                 <div>
-                    <p> {props.상세내용[props.title].내용} </p>
-                    <p> {props.상세내용[props.title].추가설명} </p>
-                    <p> {props.상세내용[props.title].추가설명1} </p>
+                    <p>{details[title].content} </p>
+                    <p>{details[title].furtherClarification} </p>
+                    <p>{details[title].furtherClarification} </p>
                 </div>
             )}
-            <button> 수정</button>
         </div>
     );
 }
