@@ -5,7 +5,7 @@ import Header from "../Header";
 import PostList from "../PostList";
 import Modal from "../Modal";
 import ContentTitle from "../ContentTitle";
-import LikeButton from "../LikeButton";
+import GridLayout from "./GridLayout";
 
 export default function Home() {
     const [postTitle, setPostTitle] = useState([
@@ -155,9 +155,9 @@ export default function Home() {
     };
 
     return (
-        <div className="container">
+        <GridLayout>
             <Header title="💜소연이의 블로그💜"/>
-            <main className="contents">
+            <main className="contents col-12">
                 <PostList
                     postTitle={postTitle}
                     like={like}
@@ -178,6 +178,6 @@ export default function Home() {
                         : null
                 }
             </main>
-        </div>
+        </GridLayout>
     );
 }
