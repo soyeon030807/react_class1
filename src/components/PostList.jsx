@@ -10,12 +10,15 @@ export default function PostList({...rest}) {
     };
 
     return (
-        <ul className="post-list">
+        <ul className="post-list grid">
             {postTitle.map((post, index) => (
-                <li className="post-item" key={index}>
+                <li className="post-item col-4 row-12" key={index}>
+                    <div>이미지 섹션</div>
                     <h4 onClick={() => toggleModal(index)}>{post}</h4>
-                    <p className="date">{date[index]}</p>
-                    <LikeButton like={like[index]} onToggle={() => handleToggleLike(index)}/>
+                    <div className="info-wrap flex item-center">
+                        <p className="date">{date[index]}</p>
+                        <LikeButton like={like[index]} onToggle={() => handleToggleLike(index)}/>
+                    </div>
                 </li>
             ))}
         </ul>

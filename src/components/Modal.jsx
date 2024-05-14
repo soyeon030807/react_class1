@@ -1,4 +1,7 @@
 import React from 'react';
+import {Link} from "react-router-dom";
+import {MdCloseFullscreen} from "react-icons/md";
+import {FaPen} from "react-icons/fa";
 
 export default function Modal({...rest}) {
     // 프롭스 받아오기
@@ -9,9 +12,14 @@ export default function Modal({...rest}) {
 
     return (
         <div className="modal" style={{background: color}}>
-            <button className="close-btn" onClick={closeModal}>x</button>
-            <h4>{postTitle[title]} </h4>
+            <div className="btn-wrap flex justify-between item-center">
+                <Link to="/"><FaPen/></Link>
+                <button className="close-btn" onClick={closeModal}>
+                    <MdCloseFullscreen/>
+                </button>
+            </div>
             <p className="date">{date[title]}</p>
+            <h4>{postTitle[title]} </h4>
             {details[title] && (
                 <div>
                     <p>{details[title].content} </p>

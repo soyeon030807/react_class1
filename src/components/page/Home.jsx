@@ -5,7 +5,7 @@ import Header from "../Header";
 import PostList from "../PostList";
 import Modal from "../Modal";
 import ContentTitle from "../ContentTitle";
-import GridLayout from "./GridLayout";
+import PageLayout from "./PageLayout";
 
 export default function Home() {
     const [postTitle, setPostTitle] = useState([
@@ -155,29 +155,32 @@ export default function Home() {
     };
 
     return (
-        <GridLayout>
+        <PageLayout>
             <Header title="💜소연이의 블로그💜"/>
-            <main className="contents col-12">
-                <PostList
-                    postTitle={postTitle}
-                    like={like}
-                    setLike={setLike}
-                    date={date}
-                    toggleModal={toggleModal}
-                />
-                {
-                    modal && title !== null
-                        ? <Modal
-                            title={title}
-                            postTitle={postTitle}
-                            date={date}
-                            details={details}
-                            color={'#f3fd97'}
-                            onClose={closeModal}
-                        />
-                        : null
-                }
-            </main>
-        </GridLayout>
+            <div className="contents-wrap">
+                <main className="contents">
+                    <PostList
+                        postTitle={postTitle}
+                        like={like}
+                        setLike={setLike}
+                        date={date}
+                        toggleModal={toggleModal}
+                    />
+                    {/* Todo: 클릭시 토글X, 모달 팝업 형태로 출력되도록 */}
+                    {
+                        modal && title !== null
+                            ? <Modal
+                                title={title}
+                                postTitle={postTitle}
+                                date={date}
+                                details={details}
+                                color={'#f3fd97'}
+                                onClose={closeModal}
+                            />
+                            : null
+                    }
+                </main>
+            </div>
+        </PageLayout>
     );
 }

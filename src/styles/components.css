@@ -39,3 +39,23 @@
     outline: 1px dotted #959595;
     outline-offset: -4px;
 }
+
+/* 메인 컨텐츠 */
+.contents-wrap {
+    width: 100%;
+}
+
+/* 게시글 */
+.info-wrap {
+
+}
+
+.modal .btn-wrap {
+    padding: .5rem 1rem;
+}
+
+.modal .btn-wrap .close-btn {
+    display: block;
+    font-size: 1.25rem;
+    line-height: 0;
+}
