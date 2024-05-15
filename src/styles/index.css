@@ -9,6 +9,7 @@
 :root {
     --color-dark: #161616;
     --color-smoke: #e4e4e4;
+    --color-gray: #dadada;
 }
 
 *, html {

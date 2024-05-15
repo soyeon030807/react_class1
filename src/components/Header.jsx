@@ -9,7 +9,7 @@ export default function Header({title}) {
                     <Link to="/">{title}</Link>
                 </h2>
                 <div className="writing">
-                    <Link to='/'>글쓰기</Link>
+                    <Link to='/writing'>글쓰기</Link>
                 </div>
             </header>
         </div>
