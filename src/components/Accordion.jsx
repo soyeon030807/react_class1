@@ -3,9 +3,9 @@ import {Link} from "react-router-dom";
 import {MdCloseFullscreen} from "react-icons/md";
 import {FaPen} from "react-icons/fa";
 
-export default function Modal({...rest}) {
+export default function Accordion({...rest}) {
     // 프롭스 받아오기
-    const {title, details, postTitle, date, color, onClose} = rest;
+    const {title, details, posts, date, color, onClose} = rest;
 
     // Modal Close
     const closeModal = () => onClose();
@@ -19,7 +19,7 @@ export default function Modal({...rest}) {
                 </button>
             </div>
             <p className="date">{date[title]}</p>
-            <h4>{postTitle[title]} </h4>
+            <h4>{posts[title]} </h4>
             {details[title] && (
                 <div>
                     <p>{details[title].content} </p>

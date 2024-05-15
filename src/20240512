@@ -163,13 +163,13 @@ function App() {
         입력값변경(e.target.value);
         console.log(입력값);
       }} />
-      {modal && title !== null ? <Modal title={title} 글제목={글제목} 날짜={날짜} 상세내용={상세내용} color={'#f3fd97'} onClose={closeModal} /> : null}
+      {modal && title !== null ? <Accordion title={title} 글제목={글제목} 날짜={날짜} 상세내용={상세내용} color={'#f3fd97'} onClose={closeModal} /> : null}
     </div>
   );
 }
 
 
-function Modal(props) {
+function Accordion(props) {
   const closeModal = () => {
     props.onClose();
   };
@@ -364,13 +364,13 @@ function App() {
         입력값변경(e.target.value);
         console.log(입력값);
       }} />
-      {modal && title !== null ? <Modal title={title} 글제목={글제목} 날짜={날짜} 상세내용={상세내용} color={'#f3fd97'} onClose={closeModal} /> : null}
+      {modal && title !== null ? <Accordion title={title} 글제목={글제목} 날짜={날짜} 상세내용={상세내용} color={'#f3fd97'} onClose={closeModal} /> : null}
     </div>
   );
 }
 
 
-function Modal(props) {
+function Accordion(props) {
   const closeModal = () => {
     props.onClose();
   };
