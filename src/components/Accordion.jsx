@@ -3,6 +3,7 @@ import {Link} from "react-router-dom";
 import {MdCloseFullscreen} from "react-icons/md";
 import {FaPen} from "react-icons/fa";
 
+// 사용되지 않음
 export default function Accordion({...rest}) {
     // 프롭스 받아오기
     const {title, details, posts, date, color, onClose} = rest;

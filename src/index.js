@@ -12,17 +12,16 @@ import {createBrowserRouter, RouterProvider} from "react-router-dom";
 // Page Components
 import App from './App';
 import Write from "./components/page/Write";
-import Posts from "./components/page/Posts";
 import PostDetail from "./components/page/PostDetail";
 import Home from "./components/page/Home";
 
+// 라우팅(페이지) 설정
 const router = createBrowserRouter([
     {
         path: '/', element: <App/>,
         children: [
             {index: true, element: <Home/>},
             {path: '/writing', element: <Write/>},
-            {path: '/posts', element: <Posts/>},
             {path: '/posts/:id/:title', element: <PostDetail/>},
         ]
     }

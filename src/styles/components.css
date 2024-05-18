@@ -69,6 +69,19 @@
     line-height: 0;
 }
 
+/* 좋아요 버튼 */
+.like-btn {
+    cursor: pointer;
+}
+
+.like-btn svg {
+    vertical-align: middle;
+}
+
+.like-btn .btn-label {
+    margin-left: .3rem;
+}
+
 /* 상세 페이지 */
 .main-details {
     height: 100%;
