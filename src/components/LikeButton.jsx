@@ -5,8 +5,11 @@ export default function LikeButton({like, onToggle}) {
     const handleClick = () => onToggle()
 
     return (
-        <span className="like-btn" onClick={handleClick}>
-            {like ? <FaHeart/> : <FaRegHeart/>} 좋아요
-        </span>
+        <div className="like-btn">
+            {like ? <FaHeart className="image"/> : <FaRegHeart/>}
+            <span className="btn-label" onClick={handleClick}>
+                좋아요
+            </span>
+        </div>
     );
 }

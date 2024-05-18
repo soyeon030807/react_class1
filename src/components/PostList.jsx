@@ -3,6 +3,7 @@ import LikeButton from "./LikeButton";
 import {Link} from "react-router-dom";
 
 export default function PostList({...rest}) {
+    // 프롭스 가져오기
     const {posts, like, setLike} = rest;
 
     const handleToggleLike = (index) => {
@@ -23,11 +24,11 @@ export default function PostList({...rest}) {
                             <img src={post.img} alt="블로그 타이틀 이미지"/>
                         </div>
                         <h4>{post.title}</h4>
-                        <div className="info-wrap flex item-center">
-                            <p className="date">{post.date}</p>
-                            <LikeButton like={like[index]} onToggle={() => handleToggleLike(index)}/>
-                        </div>
                     </Link>
+                    <div className="info-wrap flex item-center">
+                        <p className="date">{post.date}</p>
+                        <LikeButton like={like[index]} onToggle={() => handleToggleLike(index)}/>
+                    </div>
                 </li>
             ))}
         </ul>
