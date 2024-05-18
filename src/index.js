@@ -15,6 +15,7 @@ import Write from "./components/page/Write";
 import PostDetail from "./components/page/PostDetail";
 import Home from "./components/page/Home";
 
+// 라우팅(페이지) 설정
 const router = createBrowserRouter([
     {
         path: '/', element: <App/>,
